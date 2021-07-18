@@ -18,6 +18,38 @@ public class Person {
         this.pName = pName;
     }
 
+    //Setters for the fields
+    public void setName(String name){
+
+        pName = name;
+    }
+
+    public void setMomName(String name){
+
+        maternalParent = name;
+    }
+
+    public void setDadName(String name){
+
+        paternalParent = name;
+    }
+
+    public void setChildrenNames(ArrayList<String> children){
+
+        if(!children.isEmpty()){
+            //Iterate through list and match populate list one item at a time
+            for(int i = 0;i < children.size();i++){
+
+                childrenNames.add(children.get(i));
+
+        }
+
+        }
+
+    }
+
+
+
 
 
 }
