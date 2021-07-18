@@ -54,6 +54,10 @@ public class Person {
         return pName;
     }
 
+
+    /*The methods are set to private because they will be used
+    by the object to construct it's String representation
+     */
     //getter for mom name
     private  String getMomName(){
 
