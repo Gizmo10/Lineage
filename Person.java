@@ -93,6 +93,16 @@ public class Person {
 
     }
 
+    /*The String representation of Person object
+    Uses the private methods to create String
+     */
+    public String toString(){
+
+        return "Name " + getName() + "\n" + "Maternal Parent Name " + getMomName() +
+                "\n" + "Partenal Parent Name " + getDadName() + "\n" +
+                "Children Names " + "\n" + getChildren();
+    }
+
 
 
 
