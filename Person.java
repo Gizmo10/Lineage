@@ -104,7 +104,21 @@ public class Person {
     }
 
 
+   /*This method tests if two Person objects are equal */
+    public boolean equals(Object other){
+        //If the parameter is of type Person
+        if(other instanceof Person){
 
+            Person p = (Person) other;
+
+            //If the name, mom name and dad name are the same the objects are equal
+            return this.getName() == p.getName() && this.getMomName() == p.getMomName()&&
+                    this.getDadName() == p.getDadName();
+        }else{
+
+            return false;
+        }
+    }
 
 
 }
