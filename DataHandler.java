@@ -14,7 +14,9 @@ import java.util.Scanner;
 public class DataHandler {
 
     //The object has one member, an ArrayList of Person objects
-    List<Person> lineageList = new ArrayList<>();
+    private ArrayList<Person> lineageList = new ArrayList<>();
+    private int indexOfName; //Stores an index pointing to a person in the list
+
 
     /* Constructor takes no arguments and calls
     populate list  to get data into lineage lis
@@ -86,6 +88,22 @@ public class DataHandler {
         }
     }
 
+    //The method searches the lineageList to see if the name exists in list
+    private boolean nameExists(String name){
 
+        boolean exists = false;
+
+        for(int i = 0;i < lineageList.size();i++){
+            //Is the argument name in the list
+            if(name == lineageList.get(i).getName()){
+
+                exists = true;
+                return exists;
+            }
+        }
+
+        return exists;
+
+    }
 
 }
