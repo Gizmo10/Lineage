@@ -97,6 +97,7 @@ public class DataHandler {
             //Is the argument name in the list
             if(name == lineageList.get(i).getName()){
 
+                indexOfName = i;
                 exists = true;
                 return exists;
             }
@@ -104,6 +105,20 @@ public class DataHandler {
 
         return exists;
 
+    }
+
+    //Returns the Person's information from the list of people
+    public void getPersonInfo(String name){
+
+        //Test if the name is in object
+        if(this.nameExists(name)){
+
+            //Display the person's info
+            System.out.print(lineageList.get(indexOfName));
+        }else{
+
+            System.out.println("The person doesn't exist in the data base");
+        }
     }
 
 }
