@@ -12,6 +12,9 @@ public class Person {
     private String paternalParent; //Dad name
     private ArrayList<String> childrenNames = new ArrayList<>();
 
+    //default constructor
+    public Person(){};
+
     //The constructor of the Person class
     public Person(String pName){
 
