@@ -1,2 +1,2 @@
 # Lineage
-Reads list of names with their parents and children names and stores this data in a Person object and the main class will take a name input by user in console, see if the person is in file and display the person's parents' and children names.
+The program reads in an input file that has a person's data, name, mom's name, dad's name and children names(if any) on a line separated by commas. Each line represents a different person. The data is taken per line, a Person object is constructed using the data from file and stored in an ArrayList(member of a class DataHandler). The main program prompts user to enter a Person's name and then displays the person's information.
