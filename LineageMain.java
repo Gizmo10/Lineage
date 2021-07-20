@@ -1,5 +1,6 @@
 package Lineage;
 
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 /*User is prompted to input a Name
@@ -9,7 +10,7 @@ Else it prints that person is not in the base
  */
 public class LineageMain {
 
-    public static void main(String[] args) {
+    public static void main(String[] args)throws FileNotFoundException {
 
         Scanner in = new Scanner(System.in);
         DataHandler data = DataHandler.getInstance();

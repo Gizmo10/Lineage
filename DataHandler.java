@@ -7,6 +7,7 @@ their children if the person has any.
  */
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -28,17 +29,17 @@ public class DataHandler {
     populate list  to get data into lineage list.
     This constructor is private because we don't want more than one instance
      */
-    private DataHandler() {
+    private DataHandler() throws FileNotFoundException{
 
         //Call it's method that populates the lineageList field
         populateList();
     }
 
-    //Factory method to create it's own instaance
-    public static DataHandler getInstance() {
+    //Factory method to create it's own instance
+    public static DataHandler getInstance()throws FileNotFoundException {
 
         //check if instance has not been created
-        if (obj == null) {
+        if (obj == null){
 
             obj = new DataHandler();
         }
@@ -50,9 +51,9 @@ public class DataHandler {
     from a file into the respective fields of a Person
     and stores the object in lineageList
      */
-    private void populateList() {
+    private void populateList()throws FileNotFoundException{
 
-        try {
+
             //Create a file that will be used to populate list
             File inFile = new File("Lineages.txt");
             //Check if the file exists before working with it
@@ -102,9 +103,7 @@ public class DataHandler {
 
 
             }
-        } catch (Exception e) {
 
-        }
     }
 
     //The method searches the lineageList to see if the name exists in list
