@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Scanner;
 
 /*The class should only be created once because it uses a lot of data and time
-so we use the Singleton design patter to achieve our goal
+Singleton design pattern to achieve  goal
  */
 
 public class DataHandler {
