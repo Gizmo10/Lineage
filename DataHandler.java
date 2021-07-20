@@ -35,10 +35,10 @@ public class DataHandler {
     }
 
     //Factory method to create it's own instaance
-    public static DataHandler getInstance(){
+    public static DataHandler getInstance() {
 
         //check if instance has not been created
-        if(obj == null){
+        if (obj == null) {
 
             obj = new DataHandler();
         }
@@ -54,7 +54,7 @@ public class DataHandler {
 
         try {
             //Create a file that will be used to populate list
-            File inFile = new File("Lineages.txt.txt");
+            File inFile = new File("Lineages.txt");
             //Check if the file exists before working with it
             if (inFile.exists()) {
                 //Declare this to read the contents f the file
@@ -102,19 +102,19 @@ public class DataHandler {
 
 
             }
-        }catch(Exception e){
+        } catch (Exception e) {
 
         }
     }
 
     //The method searches the lineageList to see if the name exists in list
-    private boolean nameExists(String name){
+    private boolean nameExists(String name) {
 
         boolean exists = false;
 
-        for(int i = 0;i < lineageList.size();i++){
+        for (int i = 0; i < lineageList.size(); i++) {
             //Is the argument name in the list
-            if(name == lineageList.get(i).getName()){
+            if (name == lineageList.get(i).getName()) {
 
                 indexOfName = i;
                 exists = true;
@@ -127,14 +127,14 @@ public class DataHandler {
     }
 
     //Returns the Person's information from the list of people
-    public void getPersonInfo(String name){
+    public void getPersonInfo(String name) {
 
         //Test if the name is in object
-        if(this.nameExists(name)){
+        if (this.nameExists(name)) {
 
             //Display the person's info
             System.out.print(lineageList.get(indexOfName));
-        }else{
+        } else {
 
             System.out.println("The person doesn't exist in the data base");
         }

@@ -9,7 +9,7 @@ Else it prints that person is not in the base
  */
 public class LineageMain {
 
-    public static void main(String[]args){
+    public static void main(String[] args) {
 
         Scanner in = new Scanner(System.in);
         DataHandler data = DataHandler.getInstance();
@@ -22,5 +22,8 @@ public class LineageMain {
 
         //The name is looked up
         data.getPersonInfo(name);
+
+
     }
+
 }
