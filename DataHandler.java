@@ -55,24 +55,24 @@ public class DataHandler {
 
 
             //Create a file that will be used to populate list
-            File inFile = new File("Lineages.txt");
+            File inFile = new File("C:\\Users\\HP\\Desktop\\JAVA PROGRAMME\\Projects\\Family Lineage\\src\\Lineage\\Lineages.txt");
             //Check if the file exists before working with it
             if (inFile.exists()) {
                 //Declare this to read the contents f the file
                 Scanner input = new Scanner(inFile);
                 String inputLine;
-                Person p = new Person();
                 ArrayList<String> children = new ArrayList<>();//The children names are stored here
 
             /*Extracts a single line of input from file
             while there is still input to read
              */
-                while (input.hasNext()) {
+                while (input.hasNextLine()) {
 
                     //Get the line of input string
                     inputLine = input.nextLine();
                     //Split  the names from input into an array
                     String[] names = inputLine.split(",");
+                    Person p = new Person();
 
                     //Build a Person object from input and add to lineageList
                     for (int i = 0; i < names.length; i++) {
@@ -95,6 +95,8 @@ public class DataHandler {
 
                     //Set the Person object's children
                     p.setChildrenNames(children);
+                    //Clear the list for second line
+                    children.clear();
 
                     //Add the newly constructed Person to lineageList
                     lineageList.add(p);
@@ -113,11 +115,12 @@ public class DataHandler {
 
         for (int i = 0; i < lineageList.size(); i++) {
             //Is the argument name in the list
-            if (name == lineageList.get(i).getName()) {
+
+            if (name.equalsIgnoreCase(lineageList.get(i).getName())) {
 
                 indexOfName = i;
+                i = lineageList.size();
                 exists = true;
-                return exists;
             }
         }
 
@@ -129,7 +132,7 @@ public class DataHandler {
     public void getPersonInfo(String name) {
 
         //Test if the name is in object
-        if (this.nameExists(name)) {
+        if (nameExists(name)) {
 
             //Display the person's info
             System.out.print(lineageList.get(indexOfName));
