@@ -54,7 +54,7 @@ public class DataHandler {
 
         try {
             //Create a file that will be used to populate list
-            File inFile = new File("Lineages.txt");
+            File inFile = new File("Lineages.txt.txt");
             //Check if the file exists before working with it
             if (inFile.exists()) {
                 //Declare this to read the contents f the file
